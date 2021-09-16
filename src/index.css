@@ -1,0 +1,347 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: #252525;
+}
+
+a {
+  text-decoration: none;
+  color: #252525;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+.btn {
+  text-transform: uppercase;
+  margin: 35px auto;
+  padding: 10px;
+  border: 1px solid rgba(0,0,0,.29);
+  cursor: pointer;
+  background: rgb(147, 232, 247);
+  font-size: 16px;
+  width: 250px;
+  position: relative;
+  color: #000;
+  font-weight: bolder;
+}
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color:rgb(255, 255, 255);
+  color: #c41111;
+}
+
+.btn:hover {
+  border-color: rgba(0,0,0,.5);
+  text-decoration: none;
+}
+
+.btn:focus {
+  outline: 0;
+  font-weight: 700;
+  border-width: 2px;
+}
+.btn-home{
+  text-transform: uppercase;
+ float: left;
+  border: 1px solid rgba(0,0,0,.29);
+  cursor: pointer;
+  background: #fff;
+  font-size: 16px;
+  width: 50%;
+  height: 35px;
+  position: relative;
+  margin-bottom: 20px;
+}
+.center {
+  text-align: center;
+}
+
+.active-btn {
+  background-color: cadetblue;
+}
+
+.nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-decoration: none;
+  background-color: rgb(125, 211, 214);
+  border-bottom: black 1px solid;
+  
+}
+
+.nav li:first-child {
+  padding-left:0px;
+}
+.nav-li-last {
+  padding-right:0px;
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  
+  text-decoration: none;
+}
+
+.avatar {
+  height: 50px;
+  border-radius: 25px;
+  margin: 10px;
+}
+
+.form {
+  width: 100%;
+  max-width: 590px;
+  padding: 10px;
+  
+  margin: 0 auto;
+  border: 1px solid #dad7d7;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.tweet-info {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hacky but less typing in the video */
+.tweet-info > div > span:first-child {
+  font-weight: bold;
+  margin-right: 5px;
+}
+.tweet-info > div > span:nth-child(2) {
+  color: #969696;
+  font-size: 16px;
+}
+.tweet-info > div > div {
+  color: #969696;
+  font-size: 15px;
+}
+.tweet-info > div > p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+.tweet-icons {
+  display: flex;
+  align-items: center;
+}
+.tweet-icons > span {
+  color: #969696;
+  margin: 0 15px 0 5px;
+  font-size: 18px !important;
+}
+.tweet-icon {
+  font-size: 27px;
+  color: #697784;
+}
+.tweet-icon:hover {
+  color: #00b5d6;
+  cursor: pointer;
+}
+.replying-to {
+  border: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  color: #969696;
+  cursor: pointer;
+}
+
+.heart-button {
+  background: transparent;
+  border: none;
+}
+
+.NQ {
+  width: 100%;
+  max-width: 590px;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  border: solid cadetblue ;
+  padding: 20px;
+}
+
+.textarea {
+  border-radius: 4px;
+  border: 2px solid #a8e3f1;
+  padding: 10px;
+  font-size: 15px;
+  height: 50px;
+}
+
+.tweet-length {
+  text-align: right;
+  margin-top: 10px;
+  font-size: 20px;
+  color: #C3392A;
+}
+
+
+  .loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid blue;
+    border-bottom: 16px solid blue;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    left: 40%;
+    top: 10%;
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+ 
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.c{
+  width: 100%;
+  text-align: center;
+  
+}
+.out {
+  width:90%;
+  margin: 10px;
+  height:50px;
+  background-color:#fff;
+  text-align: right;
+  color: rgb(3, 3, 3);
+  border:1px solid black;
+}
+/*.in {
+  width:80%;
+  height:50px;
+  background-color:white;
+}*/
+/*.l{
+  border-radius: 50% !important;
+}*/
+.nav-li{
+ 
+  padding-right: 10%;
+}
+.nav{
+  width: 100%;
+}
+.avatarlog {
+  height: 30px;
+  border-radius: 25px;
+  margin: 0px;
+  float: right;
+}
+.p{
+  float: left;
+  margin-right: 10px;
+}
+.user{
+  margin-left:7vw ;
+}
+.home{
+  border: 2px solid black;
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  margin-top: 10px;
+}
+.line{
+  width: 100%;
+  height: 1px;
+  margin-bottom: 30px;
+  background-color: #000;
+}
+
+.question{
+  border: turquoise solid 2px;
+  margin: 10px;
+  margin-bottom: 0;
+  padding: 0px;
+  height: 150px;
+
+}
+.pro{
+  margin-bottom: 70px;
+}
+.user-info{
+  float: left;
+  border-right:solid 2px turquoise ;
+  width: 40%;
+  height: inherit;
+  padding-top: 20px;
+}
+.Q-info{
+  height: inherit;
+  padding: 0;
+  margin: 0;
+}
+.Qbtn{
+  margin-top: 10px;
+  text-transform: uppercase;
+  padding:10px 50px 10px 50px;
+  border: 1px solid rgba(0,0,0,.29);
+  cursor: pointer;
+  background: rgb(147, 232, 247);
+  font-size: 16px;
+  position: relative;
+  color: #000;
+  font-weight: bolder;
+}
+.h5-bottom{
+  margin: 0;
+  margin-bottom: 5%;
+  padding: 0;
+  
+}
+.h5{
+  margin: 0;
+  margin-bottom: 5px;
+  
+  padding: 0;
+}
+.Q-info h3{
+  margin-top: 5px;
+}
+.score{
+ margin-top: 3%;
+ margin-right: 75px;
+ width: 100px;
+ height: 50px;
+ float: right;
+ background-color: rgb(255, 136, 0);
+ border: #000 solid black 2px;
+ border-radius: 50%;
+
+}
+.h3score{
+  padding-top: 7px;
+}
+.resultUserInfo{
+  border:2px dotted black ;
+ /* background-color: rgb(139, 174, 238);*/
+}
