@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import  {Dropdown}  from "semantic-ui-react";
 import { setAuthedUser } from '../actions/authedUser';
-import { Redirect } from 'react-router-dom'
+import { Redirect, withRouter } from 'react-router-dom'
 
  class Login extends Component {
 state={
@@ -24,17 +24,15 @@ this.setState({
      const isDisabled=() => (this.state.currentUser===null)
     
      const handleChoose=(id)=>{
-     // n
      console.log(id)
-      let x= 'johndoe'
       this.setState({
         currentUser:id
        
       })
     }
-if(this.state.clicked===true){
-  return <Redirect to='/' />
-}
+if(this.props.authedUser){
+      return <Redirect to='/home' />
+    }
   
         const {users}=this.props
      //  console .log(users.avatarURL)
@@ -46,7 +44,7 @@ if(this.state.clicked===true){
 
               
 <React.Fragment>
-    
+
   
            <form className="form">  
              <h2 className="c">Welcome</h2>
@@ -84,15 +82,16 @@ if(this.state.clicked===true){
     }
 }
 
-function mapStateToProps ({ users }) {
+function mapStateToProps ({ users,authedUser }) {
     return {
      usersIds: Object.keys(users),
-     users
+     users,
+     authedUser
     }
   }
 
 
-export default connect(mapStateToProps)(Login)
+export default withRouter(connect(mapStateToProps)(Login))
 
 /*
 const styleLink = document.createElement("link");

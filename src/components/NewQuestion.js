@@ -43,7 +43,7 @@ console.log(text1,text2)
     render() {
       if(this.state.clicked===true){
         
-        return <Redirect to='/' />
+        return <Redirect to='/home' />
       }
         const { text1, text2} =this.state
         return (

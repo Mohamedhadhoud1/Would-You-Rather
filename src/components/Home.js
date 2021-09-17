@@ -4,7 +4,7 @@ import Question from './Question'
 
 class Home extends Component {
    state={
-       ans:true
+       ans:false
    }
    handleAnswer =(A)=> {
         

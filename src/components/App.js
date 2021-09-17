@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
 import Home from './Home'
@@ -34,12 +34,21 @@ class App extends Component {
            ? <div className='loader'></div>
            : 
 <div>
-       <Route path='/' exact component={Home} />
+<Switch>
+{ authedUser ? (
+<Fragment>
+       <Route path='/home' exact component={Home} />
        <Route exact path='/question/:id' component={QuestionPage} />
-       <Route path='/new' component={NewQuestion} />
+       <Route path='/add' component={NewQuestion} />
        <Route path='/LeadBoard' component={LeadBoard} />
-       <Route path='/signin' component={Login} />
+       <Route path='/' component={Login} />
        <Route exact path='/question/:id/QuestionResult' component={QuestionResult} />
+       </Fragment>
+):(
+<Route path='/' component={Login} />
+)}
+
+    </Switch>
      </div>}
      </div>
      </Fragment>
@@ -50,7 +59,8 @@ class App extends Component {
 
 function mapStateToProps ({ authedUser,users,loadingStatus }) {
   return {
-    loading: loadingStatus === 'loading' 
+    loading: loadingStatus === 'loading' ,
+    authedUser
     
   }
 }

@@ -14,12 +14,12 @@ export class Nav extends Component {
           <nav className='nav'>
             <ul>
               <li className='nav-li'>
-                <NavLink to='/' exact  activeClassName='active'>
+                <NavLink to='/home' exact  activeClassName='active'>
                   Home
                 </NavLink>
               </li>
               <li className='nav-li'>
-                <NavLink to='/new' activeClassName='active'>
+                <NavLink to='/add' activeClassName='active'>
                   New Question
                 </NavLink>
               </li>
@@ -38,11 +38,11 @@ export class Nav extends Component {
               <li className='nav-li-last'>
                 { authedUser?
                 
-                <NavLink to='/signin' activeClassName='active' onClick={this.RemoveAurhor}>
+                <NavLink to='/' activeClassName='active' onClick={this.RemoveAurhor}>
                   Log Out
                 </NavLink>
               : 
-              <NavLink to='/signin' activeClassName='active' onClick={this.RemoveAurhor}>
+              <NavLink to='/' activeClassName='active' onClick={this.RemoveAurhor}>
               Log in
             </NavLink>}
 
