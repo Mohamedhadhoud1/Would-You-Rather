@@ -34,10 +34,11 @@ clicked:false
     
   }
 
-    render() {
-     
-      if(this.props.authedUser){
-        console.log('44444',this.props)
+  render() {
+    const {authedUser,questions}=this.props
+    const qids=Object.keys(questions)
+if(authedUser && qids.includes(this.props.id)){
+        console.log('iddddddd',this.props.id)
         const { questions,users,id }=this.props
         const {timestamp, optionOne, optionTwo, author  } = questions[id]
         console.log("5555",questions[id]) 
@@ -47,7 +48,7 @@ clicked:false
   const answerd = Object.keys(answers)
    console.log("6666",users[author].avatarURL)
    if(this.state.clicked==true){
-    return  <Redirect to={`/question/${id}/QuestionResult`} />
+    return  <Redirect to={`/question/QuestionResult/${id}`} />
   }
         return (
             <div className='home'>
@@ -72,16 +73,15 @@ clicked:false
                 
        
             </div>
-        )
-    }
-    else{
-      return <Redirect to='/signin' />
-    }
+        );
+      }else{
+        return <Redirect to='/NotFound' />
+      }
   }
 }
 
 function mapStateToProps ({authedUser,users,questions},props) {
-    const { id }=props.match.params 
+  const { id }=props.match.params
   //  const question = questions[id]
     return {
         id,

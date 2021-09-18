@@ -30,7 +30,7 @@ class Question extends Component {
                 <h3>would you rather</h3>
                 <h5 className='h5'>{optionOne.text}</h5>
                 <h5 className='h5-bottom'>{optionTwo.text}</h5>
-                <Link className='Qbtn' to={this.props.ans?`/question/${id}/QuestionResult`:`/question/${id}`} >View</Link>
+                <Link className='Qbtn' to={this.props.ans? `/question/QuestionResult/${id}`:`/question/${id}`} >View</Link>
                 </div>
             </div>
                  )}

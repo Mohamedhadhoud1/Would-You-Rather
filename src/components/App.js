@@ -11,6 +11,7 @@ import LeadBoard from './LeadBoard'
 import Login from './Login'
 import  QuestionResult  from './QuestionResult'
 import Nav from './Nav'
+import NotFound from './NotFound'
 //import loadingStatus from '../reducers/loading'
 
 
@@ -22,6 +23,7 @@ class App extends Component {
  
   render() {
     const {authedUser}=this.props
+   
     return (
       <Router>
       <Fragment>
@@ -36,16 +38,20 @@ class App extends Component {
 <div>
 <Switch>
 { authedUser ? (
-<Fragment>
+<Fragment>  
        <Route path='/home' exact component={Home} />
        <Route exact path='/question/:id' component={QuestionPage} />
        <Route path='/add' component={NewQuestion} />
-       <Route path='/LeadBoard' component={LeadBoard} />
+       <Route path='/leadBoard' component={LeadBoard} />
        <Route path='/' component={Login} />
-       <Route exact path='/question/:id/QuestionResult' component={QuestionResult} />
+       <Route exact path='/question/QuestionResult/:id' component={QuestionResult} />
+       <Route path='/NotFound' component={NotFound} />
        </Fragment>
 ):(
+  <Fragment>
 <Route path='/' component={Login} />
+  
+  </Fragment>
 )}
 
     </Switch>
@@ -61,6 +67,7 @@ function mapStateToProps ({ authedUser,users,loadingStatus }) {
   return {
     loading: loadingStatus === 'loading' ,
     authedUser
+    
     
   }
 }

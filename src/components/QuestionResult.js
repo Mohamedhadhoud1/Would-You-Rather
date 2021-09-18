@@ -5,8 +5,10 @@ import { Redirect } from 'react-router-dom'
 
 class QuestionResult extends Component {
   render() {
-if(this.props.authedUser){
-    console.log(this.props);
+    const {authedUser,questions}=this.props
+    const qids=Object.keys(questions)
+if(authedUser && qids.includes(this.props.id)){
+    console.log("iiiid",this.props.id,'qid : ',qids);
     const { users, questions, id, usersIds,authedUser } = this.props;
     const { timestamp, optionOne, optionTwo, author } = questions[id];
     const { avatarURL, name } = users[author];
@@ -49,7 +51,7 @@ if(this.props.authedUser){
       </div>
     );
 }else{
-  return <Redirect to='/signin' />
+  return <Redirect to='/add' />
 }
   }
 }

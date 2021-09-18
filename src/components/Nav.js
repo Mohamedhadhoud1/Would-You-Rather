@@ -24,7 +24,7 @@ export class Nav extends Component {
                 </NavLink>
               </li>
               <li className='nav-li'>
-                <NavLink to='/LeadBoard' activeClassName='active'>
+                <NavLink to='/leadBoard' activeClassName='active'>
                   Lead Board
                 </NavLink>
               </li>
