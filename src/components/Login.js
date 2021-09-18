@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import  {Dropdown}  from "semantic-ui-react";
 import { setAuthedUser } from '../actions/authedUser';
 import { Redirect, withRouter } from 'react-router-dom'
+import authedUser from '../reducers/authedUser';
 
  class Login extends Component {
 state={
@@ -36,7 +37,9 @@ this.setState({
     const qids=Object.keys(questions)
     console.log('@@@@@:',this.props.id)
 
-  
+if(authedUser){
+  return <Redirect to='/home' />
+  }
         const {users}=this.props
      //  console .log(users.avatarURL)
      
