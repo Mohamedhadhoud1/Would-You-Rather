@@ -39,11 +39,12 @@ class App extends Component {
 <Switch>
 { authedUser ? (
 <Fragment>  
+  
        <Route path='/home' exact component={Home} />
        <Route exact path='/question/:id' component={QuestionPage} />
        <Route path='/add' component={NewQuestion} />
        <Route path='/leadBoard' component={LeadBoard} />
-       <Route path='/' component={Login} />
+       <Route exact path='/' component={Login} />
        <Route exact path='/question/QuestionResult/:id' component={QuestionResult} />
        <Route path='/NotFound' component={NotFound} />
        </Fragment>

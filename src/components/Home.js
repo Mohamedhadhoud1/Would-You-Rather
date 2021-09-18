@@ -8,7 +8,7 @@ class Home extends Component {
    }
    handleAnswer =(A)=> {
         
-        if (A==1) {this.setState(() => ({
+        if (A===1) {this.setState(() => ({
             ans:true
           }))}
         else { 

@@ -31,9 +31,11 @@ this.setState({
        
       })
     }
-if(this.props.authedUser){
-      return <Redirect to='/home' />
-    }
+    
+    const {authedUser,questions}=this.props
+    const qids=Object.keys(questions)
+    console.log('@@@@@:',this.props.id)
+
   
         const {users}=this.props
      //  console .log(users.avatarURL)
@@ -83,11 +85,13 @@ if(this.props.authedUser){
     }
 }
 
-function mapStateToProps ({ users,authedUser }) {
+function mapStateToProps ({ users,authedUser,questions },props) {
+  const { id }=props.match.params
     return {
+      id,
      usersIds: Object.keys(users),
      users,
-     authedUser
+     authedUser,questions
     }
   }
 

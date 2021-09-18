@@ -47,7 +47,7 @@ if(authedUser && qids.includes(this.props.id)){
   const {answers}=users['johndoe']
   const answerd = Object.keys(answers)
    console.log("6666",users[author].avatarURL)
-   if(this.state.clicked==true){
+   if(this.state.clicked===true){
     return  <Redirect to={`/question/QuestionResult/${id}`} />
   }
         return (

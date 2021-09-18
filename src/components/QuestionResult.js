@@ -51,7 +51,7 @@ if(authedUser && qids.includes(this.props.id)){
       </div>
     );
 }else{
-  return <Redirect to='/add' />
+  return <Redirect to='/NotFound' />
 }
   }
 }
