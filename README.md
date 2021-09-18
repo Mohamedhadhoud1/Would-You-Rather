@@ -6,6 +6,7 @@ The `_DATA.js` file represents a fake database and methods that let you access t
 
 ## installation
 download npm libiraries, react and redux
+* type {$npm install} to install packagaes
 * type {$yarn start} in the terminal to start the project
 
 ## Walk Through
